@@ -10,8 +10,11 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.core import Dataset
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
+#from sklearn.ensemble import RandomForestClassifier
+#from sklearn.datasets import make_classification
+#from sklearn.datasets import load_iris
+#from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeClassifier
 
 #
     # Dict for cleaning data
@@ -38,7 +41,7 @@ from sklearn.datasets import make_classification
  #   x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
 def main():
     x= pd.DataFrame(ds1)
-    y= ds1.drop("Walc", inplace=True, axis=1)
+    y= ds1.drop("Walc", inplace=False, axis=1)
 
     
  #   return x_df, y_df
@@ -53,18 +56,22 @@ def main():
     y_train, y_test = train_test_split(y, test_size=0.2)
 
     parser = argparse.ArgumentParser()
-
-    parser.add_argument('--n_estimators', type=int, default=100, help="Inverse of regularization strength. Smaller values cause stronger regularization")
+   #max_leaf_nodes
+    #parser.add_argument('--n_estimators', type=int, default=100, help="Inverse of regularization strength. Smaller values cause stronger regularization")
+    parser.add_argument('--max_leaf_nodes', type=int, default=10, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument('--min_samples_split', type=int, default=2, help="Maximum number of iterations to converge")
 
     args = parser.parse_args()
 
-    run.log("n_estimators:", np.int(args.n-estimators))
-    run.log("min_samlples_split", np.int(args.min_samples_split))
+    run.log("max_leaf_nodes:", np.int(args.max_leaf_nodes))
+    run.log("min_samples_split", np.int(args.min_samples_split))
 
     #model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
-    model = RandomForestClassifier(n_estimators = args.n_estimators, min_samples_split = args.min_samples_split)
-#model = RandomForestClassifier(n_estimators = args.n_estimators)
+
+    #---this-one--model = RandomForestClassifier(n_estimators = args.n_estimators, min_samples_split = args.min_samples_split)
+
+    model = DecisionTreeClassifier(min_samples_split = args.min_samples_split, max_leaf_nodes = args.max_leaf_nodes)
+  #model = RandomForestClassifier(n_estimators = args.n_estimators)
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
