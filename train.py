@@ -18,7 +18,22 @@ from sklearn.metrics import accuracy_score
 #from sklearn.model_selection import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.multioutput import MultiOutputClassifier
-ds = Dataset.get_by_name(ws,'alcohol')
+
+#ws = Workspace.from_config()
+#ds = Dataset.get_by_name(ws,'alcohol')
+
+# azureml-core of version 1.0.72 or higher is required
+# azureml-dataprep[pandas] of version 1.1.34 or higher is required
+from azureml.core import Workspace, Dataset
+
+subscription_id = '1b944a9b-fdae-4f97-aeb1-b7eea0beac53'
+resource_group = 'aml-quickstarts-139488'
+workspace_name = 'quick-starts-ws-139488'
+
+workspace = Workspace(subscription_id, resource_group, workspace_name)
+
+ds = Dataset.get_by_name(workspace, name='alcohol')
+
 run = Run.get_context()
 
 
@@ -95,7 +110,7 @@ def main():
 
     #---this-one--model = RandomForestClassifier(n_estimators = args.n_estimators, min_samples_split = args.min_samples_split)
 
-    model = DecisionTreeClassifier(min_samples_split = 2, max_leaf_nodes = 10)
+    model = DecisionTreeClassifier(min_samples_split = args.min_samples_split, max_leaf_nodes = args.max_leaf_nodes)
     model.fit(x_train,y_train)
 #classifier = MultiOutputClassifier(model, n_jobs=-1)
 #classifier.fit(x_train,y_train)
