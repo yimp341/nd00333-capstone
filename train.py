@@ -26,13 +26,13 @@ from sklearn.multioutput import MultiOutputClassifier
 # azureml-dataprep[pandas] of version 1.1.34 or higher is required
 from azureml.core import Workspace, Dataset
 
-subscription_id = '1b944a9b-fdae-4f97-aeb1-b7eea0beac53'
-resource_group = 'aml-quickstarts-139488'
-workspace_name = 'quick-starts-ws-139488'
+#subscription_id = '1b944a9b-fdae-4f97-aeb1-b7eea0beac53'
+#resource_group = 'aml-quickstarts-139488'
+#workspace_name = 'quick-starts-ws-139488'
 
-workspace = Workspace(subscription_id, resource_group, workspace_name)
+#workspace = Workspace(subscription_id, resource_group, workspace_name)
 
-ds = Dataset.get_by_name(workspace, name='alcohol')
+ds = Dataset.Tabular.from_delimited_files(path = 'https://raw.github.com/yimp341/nd00333-capstone/master/Student_alcohol_consumption.csv')
 
 run = Run.get_context()
 
