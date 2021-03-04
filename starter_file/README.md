@@ -26,6 +26,7 @@ For this autoML experiment we set the primary metric to be the Accuracy. On the 
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
+The model obtained from the AutoML experiment was a Voting Ensemble Model. The parameters are the models involved in the ensemble. Namely: XGBoostClassifier, LightGBM, ExtremeRandomTrees, ExtremeRandomTrees, ExtremeRandomTrees, LightGBM, XGBoostClassifier, ExtremeRandomTrees, RandomForest. The weights of this model are given by 0.09090909090909091, 0.09090909090909091, 0.18181818181818182, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.18181818181818182 and 0.09090909090909091 respectively. The acuracy obtained in this case was: 0.51.
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
