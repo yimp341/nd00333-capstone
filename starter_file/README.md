@@ -18,6 +18,7 @@ This is a multilabel classification (from 1 to 5). For this task we use a desici
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
+In the autoML experiment, we upload the data from local files to the Azure workspace and we call the file from the jutpyter notebook. For the Hyperparameter tunning experiment, we call the data from webfiles, otherwise we would need to call the workspace from the train.py file, and we would need to do manual authentication each time any run is performed.
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
