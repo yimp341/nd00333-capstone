@@ -38,18 +38,18 @@ We provide below screenshots of the rundetails and the obtained best model with 
 We used a Desicion Tree Classifier for this project. The reason is mainly that there are several columns labeles with "yes" and "no", this leads to the possibility of using a decision tree. The rest of the columns are labeled differently, but the values are only integers from 1 to 5 and, many of them actually refer to ordered "levels" of quality of relationships, education among others.
 
 The parameters chosen for tunning in this project are Min_sample_split, i.e. the minimum number of samples required to split an internal node. We chosed to give a range varying among units and tens in order to determine if the model needs several (50) or few samples for splitting.
-The second parameter is Max_leaf_nodes, which restricts the number of ending nodes of the tree. Here the model is deciding the expansion capacity of the tree, we want to know if it is better that the tree expands significantly at. the ends
+The second parameter is Max_leaf_nodes, which restricts the number of ending nodes of the tree. Here the model is deciding the expansion capacity of the tree, we want to know if it is better for the tree to expand significantly at the end leaves.
 
 
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? 
 The best parameters otained from this experiment are:
 Max_leaf_nodes=5,
 Min_samples_split=10,
 and the accuracy achieved for these parameters was 0.42. The model could be improved for sure, since the acuracy is quite low, and I think that we could change to a non-binary tree, cause several columns have labels from 1 to 5. I think a tree with 5 leaves for some of the nodes. However, since some (and not few) of the columns are labeled with 'yes' and 'no' tags, we could analize the data set separately. 
 
-We provide below screenshots of the rundetails and the obtained best model with its parameters.
+We provide below screenshots of the rundetails and the obtained best model with its parameters:
+
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Rundetails1.PNG)
 
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Rundetails2.PNG)
@@ -62,11 +62,12 @@ Since the best accuracy for this project was obtained with the AutoML model, thi
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Deployment1.PNG)
 
 Then, we provide a sample input:
+
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Deployment%202.PNG)
 
 After which we obtain the result:
+
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/DeploymentRESULT.PNG)
-![alt text]()
 
 
 ## Screen Recording
