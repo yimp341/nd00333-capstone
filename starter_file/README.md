@@ -2,7 +2,7 @@
 
 # Your Project Title Here
 
-*TODO:* Write a short introduction to your project.
+*TODO:* In this project, we aim to predict the alcohol consumption among students, by means of both AutoML and hyperparameter tunning. We deploy one of the resulting models as a webservice. 
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
@@ -10,10 +10,11 @@
 ## Dataset
 
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+*TODO*: The dataset for this project was obtained from Kaggle. It stablish a level from 1 to five of alcohol consumption in students. The set of columns includes education information about the students, together with information about their parents ocupation, family relationships among others. 
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+This is a multilabel classification (from 1 to 5). For this task we use a desicion tree classifier, where we look for the best parameters by means of Hyperparametertunning tool. On the other hand, we use AutoML for finding the best possible model for this setting.
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
