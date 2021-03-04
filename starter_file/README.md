@@ -21,7 +21,7 @@ For this autoML experiment we set the primary metric to be the Accuracy. On the 
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 The model obtained from the AutoML experiment was a Voting Ensemble Model. The parameters are the models involved in the ensemble. Namely: XGBoostClassifier, LightGBM, ExtremeRandomTrees, ExtremeRandomTrees, ExtremeRandomTrees, LightGBM, XGBoostClassifier, ExtremeRandomTrees, RandomForest. The weights of this model are given by 0.09090909090909091, 0.09090909090909091, 0.18181818181818182, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.09090909090909091, 0.18181818181818182 and 0.09090909090909091 respectively. The acuracy obtained in this case was: 0.54.
 
-The model could be improved for sure, since the acuracy is low, and I think that we could change to a non-binary tree, cause several columns have labels from 1 to 5. I think a tree with 5 leaves for some of the nodes. However, since some (and not few) of the columns are labeled with 'yes' and 'no' tags, we could analize the data set separately. Other option for improving the model must rely on improving the data celansing, cause in this case the cleansing reduces to convert strings to integers.
+The model could be improved (acuracy is lower than 60%) by making an improvement of the data celansing, cause in this case the cleansing reduces to convert strings to integers. We could fill the missing values with the mean or by menas of other statisical methods, instead of just dropping the rows with missing values.
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20rundetails.PNG)
@@ -35,11 +35,19 @@ The model could be improved for sure, since the acuracy is low, and I think that
 
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+We used a desicion tree classifier for this project. The reason is mainly that there are several columns labeles with "yes" and "no", this leads to a decision tree. The rest of the columns are labeled differently but the values are just integers from 1 to five and many of them actually refer to ordered "levels" like quality of relationships or education. The parameters.
+
+The parameters chosed for tunning in this project are Min_sample_split, i.e. the minimum number of samples required to split an internal node. We chosed to give a range varying among units and tens in order to determine if the model needs several (50) or few samples for splitting.
+The second parameter is Max_leaf_nodes, which restricts the number of ending nodes of the tree. Here the model is deciding the expansion capacity of the tree, we want to know if it is better that the tree expands significantly at. the ends
+
 
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+*TODO*: What are the results you got with your model? What were the parameters of the model? 
+The best parameters otained from this experiment are:
+Max_leaf_nodes=5,
+Min_samples_split=10,
+and the accuracy achieved for these parameters was 0.42. The model could be improved for sure, since the acuracy is quite low, and I think that we could change to a non-binary tree, cause several columns have labels from 1 to 5. I think a tree with 5 leaves for some of the nodes. However, since some (and not few) of the columns are labeled with 'yes' and 'no' tags, we could analize the data set separately. 
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
