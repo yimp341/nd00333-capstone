@@ -1,6 +1,6 @@
 # Student alcohol consuption 
 
-*TODO:* In this project, we aim to predict the alcohol consumption among students, by means of both AutoML and hyperparameter tunning. We deploy one of the resulting models as a webservice. 
+In this project, we aim to predict the alcohol consumption among students, by means of both AutoML and hyperparameter tunning. We deploy one of the resulting models as a webservice. 
 
 ## Dataset
 
@@ -23,7 +23,7 @@ The model obtained from the AutoML experiment was a Voting Ensemble Model. The p
 
 The model could be improved (acuracy is lower than 60%) by making an improvement of the data celansing, cause in this case the cleansing reduces to convert strings to integers. We could fill the missing values with the mean or by menas of other statisical methods, instead of just dropping the rows with missing values.
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+We provide below screenshots of the rundetails and the obtained best model with its parameters and Run ID.
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20rundetails.PNG)
 
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20rundetails2.PNG)
@@ -49,13 +49,26 @@ Max_leaf_nodes=5,
 Min_samples_split=10,
 and the accuracy achieved for these parameters was 0.42. The model could be improved for sure, since the acuracy is quite low, and I think that we could change to a non-binary tree, cause several columns have labels from 1 to 5. I think a tree with 5 leaves for some of the nodes. However, since some (and not few) of the columns are labeled with 'yes' and 'no' tags, we could analize the data set separately. 
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+We provide below screenshots of the rundetails and the obtained best model with its parameters.
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Rundetails1.PNG)
+
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Rundetails2.PNG)
+
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/HyperdriveBestModel.PNG)
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+Since the best accuracy for this project was obtained with the AutoML model, this was the model we considered for deployment. That is, a Voting Ensemble model. In order to make a request to the endpoint, we provide the URL and Primary Key as follows:
+
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Deployment1.PNG)
+
+Then, we provide a sample input:
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Deployment%202.PNG)
+
+After which we obtain the result:
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/DeploymentRESULT.PNG)
+![alt text]()
+
 
 ## Screen Recording
 https://drive.google.com/file/d/1m_7MIO2_mJ8LTzTL_jfuW8jqCxpH6Q1b/view?usp=sharing
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
