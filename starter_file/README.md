@@ -31,6 +31,14 @@ The model obtained from the AutoML experiment was a Voting Ensemble Model. The p
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20rundetails.PNG)
 
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20rundetails2.PNG)
+
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20Besto%20Model.PNG)
+
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/AutoML%20Besto%20Model%20ID.PNG)
+
+
+
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
