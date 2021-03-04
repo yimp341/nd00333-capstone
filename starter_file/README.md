@@ -22,6 +22,7 @@ In the autoML experiment, we upload the data from local files to the Azure works
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+For this autoML experiment we set the primary metric to be the Accuracy. On the other hand, the number of folds for cross valitation is set to be 2. The reason for this is that the number of columns in the dataset (<500) is not large enough for each sample to be sufficiently large. Also, we want to save time. Finally, we set the experiment timeout minutes to be 30, for the dataset is not that large and we don't want the experiment to take so long for now.  
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
