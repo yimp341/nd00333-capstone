@@ -59,7 +59,7 @@ We provide below screenshots of the rundetails and the obtained best model with 
 ## Model Deployment
 Since the best accuracy for this project was obtained with the AutoML model, this was a Voting Ensemble model which we considered for deployment. Below we show the healthy status after the deployment procedure.
 
-
+![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/ActiveEndpoint.PNG)
 
 In order to make a request to the endpoint, we provide the URL and Primary Key as follows:
 
