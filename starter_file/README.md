@@ -1,11 +1,11 @@
 # Student alcohol consuption 
 
-In this project, we aim to predict the alcohol consumption among students, by means of both AutoML and Hyperparameter tunning. We deploy one of the resulting models as a webservice. 
+In this project, we aim to predict the alcohol consumption among students, by means of both AutoML and Hyperparameter tunning. We deploy one of the resulting models (namely, the one with the best accuracy) as a webservice. Additionally, we consume the endpoint by making a request to the model by means of the jupyter notebook. 
 
 ## Dataset
 
 ### Overview
-The dataset for this project was obtained from Kaggle. It stablish a level from 1 to 5 indicating a level of alcohol consumption in students. The set of columns includes education information about the students, together with information about their parents ocupation, family relationships among others. 
+The dataset for this project was obtained from Kaggle. It stablish a level from 1 to 5 indicating a level of alcohol consumption in students during the weekend days. The set of 32 columns includes education information about the students, together with information about their parents ocupation, family relationships among others. Our target colum is well balanced. That is why we use Accuracy for testing. The dataset contains information from 395 students. 
 
 ### Task
 This is a multilabel classification (from 1 to 5). For this task, we use a Desicion Tree Classifier, where we look for the best parameters by means of Hyperparametertunning tool. On the other hand, we use AutoML for finding the best possible model for this setting.
