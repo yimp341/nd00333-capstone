@@ -57,7 +57,11 @@ We provide below screenshots of the rundetails and the obtained best model with 
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/HyperdriveBestModel.PNG)
 
 ## Model Deployment
-Since the best accuracy for this project was obtained with the AutoML model, this was the model we considered for deployment. That is, a Voting Ensemble model. In order to make a request to the endpoint, we provide the URL and Primary Key as follows:
+Since the best accuracy for this project was obtained with the AutoML model, this was a Voting Ensemble model which we considered for deployment. Below we show the healthy status after the deployment procedure.
+
+
+
+In order to make a request to the endpoint, we provide the URL and Primary Key as follows:
 
 ![alt text](https://github.com/yimp341/nd00333-capstone/blob/master/Deployment1.PNG)
 
